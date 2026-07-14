@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageDeliveryBoyTest extends Base {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	public void ManageDeliveryBoy() throws IOException, AWTException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
