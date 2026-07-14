@@ -14,7 +14,7 @@ import utilities.PageUtility;
 public class AdminUsersTest extends Base
 {
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class)
 	public void createAdminUserInformation() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -27,13 +27,13 @@ public class AdminUsersTest extends Base
 		loginpage.usernameandpassword(usernamevalue, passwordvalue);
 		
 	
-		//String adminusernamevalue=ExcelUtility.getStringData(1, 0, "adminuserspage");
+		String adminusernamevalue=ExcelUtility.getStringData(1, 0, "adminuserspage");
 		String adminpasswordvalue=ExcelUtility.getStringData(1, 1, "adminuserspage");
 		String adminusertype=ExcelUtility.getStringData(1, 2, "adminuserspage");
 		
 		AdminUsersPage adminuserspage = new AdminUsersPage(driver);
-		FakerUtility faker= new FakerUtility();
-		String adminusernamevalue=faker.generateCategory();
+		//FakerUtility faker= new FakerUtility();
+		//String adminusernamevalue=faker.generateCategory();
 		
 		adminuserspage.adminuser();
 		adminuserspage.newbutton();
