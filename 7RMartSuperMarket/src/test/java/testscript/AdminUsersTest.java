@@ -14,7 +14,7 @@ import utilities.PageUtility;
 public class AdminUsersTest extends Base
 {
 	
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="testcase is for adminusers test")
 	public void createAdminUserInformation() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

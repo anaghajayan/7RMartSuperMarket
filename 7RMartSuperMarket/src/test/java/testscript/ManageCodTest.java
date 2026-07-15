@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageCodTest extends Base{
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="testcase is for managecode")
 	public void ManageCategoryInformation() throws IOException, AWTException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
