@@ -3,7 +3,7 @@ package testscript;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
-import pages.LogoutPage;
+import pages.HomePage;
 
 public class LogoutTest extends Base {
 	@Test
@@ -16,7 +16,7 @@ public class LogoutTest extends Base {
 		loginpage.enterUsername(usernamevalue);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.signIn();
-		LogoutPage logoutpage= new LogoutPage(driver);
+		HomePage logoutpage= new HomePage(driver);
 		logoutpage.clickOnAdminButton();
 		logoutpage.clickOnLogoutButton();
 	}
