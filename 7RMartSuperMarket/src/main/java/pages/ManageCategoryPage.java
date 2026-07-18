@@ -16,7 +16,7 @@ private static final String APPLEIMG = null;
 
 public WebDriver driver;
 	
-    @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']")WebElement managecategory;
+   // @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']")WebElement managecategorymoreinfo;
     @FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
     @FindBy(xpath="//input[@name='category']")WebElement category;
     @FindBy(xpath="//span[text()='Organic']")WebElement organic;
@@ -29,22 +29,25 @@ public WebDriver driver;
 		this.driver=driver;
 		PageFactory.initElements(driver, this);//first one is local driver,this means current class instance driver/to initialize web elements
 	}
-	public void managecategory()
+	/*public void clickonmanagecategorymoreinfo()
 	{
-		managecategory.click();
-	}
-	public void newbutton()
+		managecategorymoreinfo.click();
+	}*/
+	public ManageCategoryPage newbutton()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void entercategory(String categoryvalue)
+	public ManageCategoryPage entercategory(String categoryvalue)
 	{
 		category.clear();
 		category.sendKeys(categoryvalue);
+		return this;
 	}
-	public void organic()
+	public ManageCategoryPage organic()
 	{
 		organic.click();
+		return this;
 	}
 	/*PageUtility page=new PageUtility();
 
@@ -56,16 +59,18 @@ public WebDriver driver;
 	*/
 	FileUploadUtility fileupload=new FileUploadUtility();
 			
-	public void choosefile() throws AWTException
+	public ManageCategoryPage choosefile() throws AWTException
 	{
 		//choosefile.click();
 		//fileupload.fileUploadUsingRobotClass(Constant.APPLEIMG);
 		fileupload.fileUploadUsingSendKeys(choosefile,Constant.APPLEIMG);
+		return this;
 		
 	}
-	public void save()
+	public ManageCategoryPage save()
 	{
 		save.submit();
+		return this;
 	}
 	
 	public boolean isAlertMessageDisplayed()

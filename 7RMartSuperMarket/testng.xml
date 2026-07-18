@@ -8,14 +8,14 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="chrome"></parameter>
   <classes>
-     <class name="testscript.AdminUsersTest"/>
+     <!--class name="testscript.AdminUsersTest"/>
       <class name="testscript.ManageNewsTest"/>
       <class name="testscript.ManageDeliveryBoyTest"/>
       <class name="testscript.ManageCodTest"/>
       <class name="testscript.LogoutTest"/>
       <class name="testscript.ManageCategoryTest"/>
-      <class name="testscript.LoginTest">
-   
+      <class name="testscript.LoginTest"-->
+ <class name="testscript.AdminUsersTest">
      </class>
     </classes>
   </test> <!-- Test -->

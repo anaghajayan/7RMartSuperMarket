@@ -19,20 +19,23 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);//first one is local driver,this means current class instance driver/to initialize web elements
 	}
 
-	public void enterUsername(String usernamevalue)
+	public LoginPage enterUsername(String usernamevalue)
 	{
 		
 		username.sendKeys(usernamevalue);
+		return this;
 	}
 	
-	public void enterPassword(String passwordvalue)
+	public LoginPage enterPassword(String passwordvalue)
 	{
 		password.sendKeys(passwordvalue);
+		return this;
 	}
 	
-	public void signIn()
+	public HomePage signIn()
 	{
 		signin.click();
+		return new HomePage(driver);
 	}
 	
 	public boolean isDashboardDisplayed()

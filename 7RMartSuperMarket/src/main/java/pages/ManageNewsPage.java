@@ -14,7 +14,7 @@ import utilities.WaitUtility;
 
 public class ManageNewsPage {
 public WebDriver driver;
-    @FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")WebElement mnews;
+    //@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']")WebElement managenewsmoreinfo;
     @FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
 	@FindBy(xpath="//textarea[@name='news']")WebElement news;
 	@FindBy(xpath="//button[@name='create']")WebElement save;
@@ -25,27 +25,30 @@ public WebDriver driver;
 		this.driver=driver;
 		PageFactory.initElements(driver, this);//first one is local driver,this means current class instance driver/to initialize web elements
 	}
-	public void clicktomanagenews()
+	/*public void clicktomanagenewsmoreinfo()
 	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)","");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
- 		wait.until(ExpectedConditions.elementToBeClickable(mnews)).click();
+ 		wait.until(ExpectedConditions.elementToBeClickable(managenewsmoreinfo)).click();
 	
-	}
-	public void newbutton()
+	}*/
+	public ManageNewsPage newbutton()
 	{
 		
 		newbutton.click();
+		return this;
 	}
-	public void enternews(String newsvalue)
+	public ManageNewsPage enternews(String newsvalue)
 	{
 		news.clear();
 		news.sendKeys(newsvalue);
+		return this;
 	}
-	public  void save()
+	public ManageNewsPage save()
 	{
 		save.submit();
+		return this;
 	}
 	public boolean isAlertMessageDisplayed()
 	{

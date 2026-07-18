@@ -5,11 +5,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base
 {	
+	HomePage homepage;
 	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="testcase is for login")
 	public void verifyUserIsAbleToLoginWithValidCredentials() throws IOException 
 	{
@@ -17,14 +20,16 @@ public class LoginTest extends Base
 		//String passwordvalue = "admin";
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
 		String passwordvalue=ExcelUtility.getStringData(1, 1, "loginpage");
+		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUsername(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean homepage=loginpage.isDashboardDisplayed();
-		Assert.assertTrue(homepage);
+		Assert.assertTrue(homepage,Constant.LOGINWITHVALIDCRDENTIALS);
 	
 	}
+	
 	@Test
 	public void  verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException
 	{
@@ -34,11 +39,11 @@ public class LoginTest extends Base
 		String passwordvalue=ExcelUtility.getStringData(2, 1, "loginpage");
 		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUsername(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGINWITHVALIDUSERNAMEANDINVALIDPASSWORD);
 		
 	}
 	@Test
@@ -50,11 +55,11 @@ public class LoginTest extends Base
 		String passwordvalue=ExcelUtility.getStringData(3, 1, "loginpage");
 		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUsername(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGINWITHINVALIDUSERNAMEANDVALIDPASSWORD);
 	}
 	@Test
 	public void  verifyUserIsAbleToLoginWithInvalidUsernameAndInValidPassword() throws IOException
@@ -65,11 +70,11 @@ public class LoginTest extends Base
 		String passwordvalue=ExcelUtility.getStringData(4, 1, "loginpage");
 		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUsername(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGINWITHINVALIDUSERNAMEANDINVALIDPASSWORD);
 	}
 
 

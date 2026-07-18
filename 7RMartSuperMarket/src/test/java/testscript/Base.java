@@ -58,7 +58,7 @@ public class Base {
 		
 	}
 	
-	@AfterMethod(alwaysRun=true)
+	//@AfterMethod(alwaysRun=true)
 	
 		public void browserQuit(ITestResult iTestResult) throws IOException 
 		{

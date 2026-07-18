@@ -14,7 +14,7 @@ public class ManageDeliveryBoyPage {
 	
 public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy' and @class='small-box-footer']")WebElement delivery;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy' and @class='small-box-footer']")WebElement managedeliverymoreinfo;
     @FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
 	@FindBy(xpath="//input[@name='name']")WebElement name;
 	@FindBy(xpath="//input[@name='email']")WebElement email;
@@ -30,52 +30,60 @@ public WebDriver driver;
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void managedelivery()
+	/*public void clickonmanagedeliverymoreinfo()
 	{
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)","");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
- 		wait.until(ExpectedConditions.elementToBeClickable(delivery)).click();
-		//delivery.click();
-	}
-	public void newbutton()
+ 		wait.until(ExpectedConditions.elementToBeClickable(managedeliverymoreinfo)).click();
+		//managedeliverymoreinfo.click();
+	}*/
+	public ManageDeliveryBoyPage newbutton()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void entername(String namevalue)
+	public ManageDeliveryBoyPage entername(String namevalue)
 	{
 		name.clear();
 		name.sendKeys(namevalue);
+		return this;
 	}
-	public void enteremail(String emailvalue)
+	public ManageDeliveryBoyPage enteremail(String emailvalue)
 	{
 		email.clear();
 		email.sendKeys(emailvalue);
+		return this;
 		
 	}
-	public void enterphoneno(int phonevalue)
+	public ManageDeliveryBoyPage enterphoneno(int phonevalue)
 	{
 		phone.clear();
 		phone.sendKeys(Integer.toString(phonevalue));
+		return this;
 	}
-	public void enteraddress(String addressvalue)
+	public ManageDeliveryBoyPage enteraddress(String addressvalue)
 	{
 		address.clear();
 		address.sendKeys(addressvalue);
+		return this;
 	}
-	public void enterusername(String usernamevalue)
+	public ManageDeliveryBoyPage enterusername(String usernamevalue)
 	{
 		username.clear();
 		username.sendKeys(usernamevalue);
+		return this;
 	}
-	public void enterpassword(String passwordvalue)
+	public ManageDeliveryBoyPage enterpassword(String passwordvalue)
 	{
 		password.clear();
 		password.sendKeys(passwordvalue);
+		return this;
 	}
-	public void savebutton()
+	public ManageDeliveryBoyPage savebutton()
 	{
 		savebutton.submit();
+		return this;
 	}
 	public boolean isAlertMessageDisplayed()
 	{
