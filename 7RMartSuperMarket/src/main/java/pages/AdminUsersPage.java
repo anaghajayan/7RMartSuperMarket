@@ -17,7 +17,8 @@ public WebDriver driver;
 	@FindBy(xpath="//input[@id='password']")WebElement adminpassword;
 	@FindBy(xpath="//select[@name='user_type']")WebElement usertype;
 	@FindBy(xpath="//button[@name='Create']")WebElement save;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
+	//@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement alert;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")WebElement alert;
 	
 	public AdminUsersPage(WebDriver driver) 
 	{
