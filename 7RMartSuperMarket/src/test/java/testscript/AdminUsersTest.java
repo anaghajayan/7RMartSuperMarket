@@ -30,13 +30,13 @@ public class AdminUsersTest extends Base
 		
 		
 	
-		String adminusernamevalue=ExcelUtility.getStringData(1, 0, "adminuserspage");
+		//String adminusernamevalue=ExcelUtility.getStringData(1, 0, "adminuserspage");
 		String adminpasswordvalue=ExcelUtility.getStringData(1, 1, "adminuserspage");
 		String adminusertype=ExcelUtility.getStringData(1, 2, "adminuserspage");
 		
 		
-		//FakerUtility faker= new FakerUtility();
-		//String adminusernamevalue=faker.generateCategory();
+		FakerUtility faker= new FakerUtility();
+		String adminusernamevalue=faker.generateCategory();
 		
 		
 		admin=homepage.clickonadminusermoreinfo();
@@ -48,7 +48,7 @@ public class AdminUsersTest extends Base
 		//admin.selectusertype("admin");
 		//admin.save();
 		boolean alert=admin.isAlertMessageDisplayed();
-		Assert.assertTrue(alert,Constant.USERCREATED);
+		Assert.assertTrue(alert,Constant.ADMINPAGE);
 		
 	
 	}

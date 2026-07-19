@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
@@ -32,7 +33,7 @@ public class ManageCodTest extends Base{
 		//code.selectradiobutton();
 		//code.clickonsavebutton();
 		boolean alert=code.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.MANAGECODEPAGE);
 	}
 
 

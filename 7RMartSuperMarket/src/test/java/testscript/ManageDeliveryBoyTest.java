@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
@@ -46,7 +47,7 @@ public class ManageDeliveryBoyTest extends Base {
 		//boy.enterpassword(passwordvaluedeli);
 		//boy.savebutton();
 		boolean alert=boy.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.DELIVERYBOYPAGE);
 		
 		
 		

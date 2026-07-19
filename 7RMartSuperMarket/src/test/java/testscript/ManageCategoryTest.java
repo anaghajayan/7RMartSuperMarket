@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
@@ -41,7 +42,7 @@ public class ManageCategoryTest extends Base {
 	     //managecategory1.choosefile();
 		//managecategory1.save();
 		boolean alert=managecategory1.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.CATEGORYPAGE);
 	}
 
 }

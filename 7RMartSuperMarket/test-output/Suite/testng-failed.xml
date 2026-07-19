@@ -13,6 +13,12 @@
           <include name="createAdminUserInformation"/>
         </methods>
       </class> <!-- testscript.AdminUsersTest -->
+      <class name="testscript.ManageCategoryTest">
+        <methods>
+          <include name="ManageCategoryInformation"/>
+          <include name="initializebrowser"/>
+        </methods>
+      </class> <!-- testscript.ManageCategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
